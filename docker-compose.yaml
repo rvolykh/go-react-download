@@ -1,15 +1,18 @@
 version: '3'
+
 services:
   go:
     build:
       context: goapp
     ports:
       - "8081:80"
+
   react:
     build:
       context: reactapp
     ports:
       - "8080:80"
+
   nginx:
     image: nginx:1.18-alpine
     ports:
