@@ -1,5 +1,7 @@
 # Golang & ReactJS Download file example
 
+![](https://github.com/rvolykh/go-react-download/workflows/.github/workflows/dockercompose.yml/badge.svg)
+
 Simple Download file example:
 1. ReactJS application with button for file download.
 2. Golang HTTP server creates dynamically csv file and streams it to a response.
