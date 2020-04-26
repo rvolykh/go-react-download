@@ -1,6 +1,6 @@
 # Golang & ReactJS Download file example
 
-![](https://github.com/rvolykh/go-react-download/workflows/.github/workflows/dockercompose.yml/badge.svg)
+![](https://github.com/rvolykh/go-react-download/workflows/Docker%20Compose/badge.svg)
 
 Simple Download file example:
 1. ReactJS application with button for file download.
