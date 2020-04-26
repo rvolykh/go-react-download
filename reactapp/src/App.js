@@ -1,23 +1,30 @@
-// App.js
-
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Download from './components/Download';
+import { Card, Button, Container}  from "react-bootstrap";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
     render() {
         return (
-            <Router>
-                <div className="container">
-                    <h2>React & Golang file download</h2>
-                    <hr />
-                    <Switch>
-                        <Route path='/' component={ Download } />
-                    </Switch>
-                </div>
-            </Router>
+            <Container>
+                <Card border="dark" style={{ width: '18rem'}}>
+                    <Card.Img src="/logo512.png"/>
+                    <Card.Body>
+                        <Card.Title>
+                            React & Golang file download
+                        </Card.Title>
+                        <Card.Text>
+                            XHR approach requires more effort.
+                            That is why lets stick with HTML.
+                        </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                        <Button href="/go/download" block="true">
+                            Download file
+                        </Button>
+                    </Card.Footer>
+                </Card>
+            </Container>
         );
     }
 }
