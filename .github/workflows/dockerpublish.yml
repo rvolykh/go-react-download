@@ -1,0 +1,30 @@
+name: Docker Compose
+
+on:
+  push:
+    # Publish `master` as Docker `latest` image.
+    branches:
+      - master
+
+  # Run tests for any PRs.
+  pull_request:
+
+jobs:
+  # Run tests.
+  # See also https://docs.docker.com/docker-hub/builds/automated-testing/
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Up
+        run: |
+            docker-compose up -d --build
+      - name: Run tests
+        run: |
+            curl -o /dev/null --fail http://localhost/go/download
+            curl -o /dev/null --fail http://localhost/
+      - name: Down
+        if: always()
+        run: |
+            docker-compose down --rmi local
