@@ -17,10 +17,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Run tests
+      - name: Up
         run: |
             docker-compose up -d --build
-            curl http://localhost:8081/download -o=/dev/null
+      - name: Run tests
+        run: |
+            curl -o /dev/null --fail http://localhost/go/download
+            curl -o /dev/null --fail http://localhost/
+      - name: Down
+        if: always()
+        run: |
             docker-compose down --rmi local
-
