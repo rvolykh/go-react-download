@@ -19,9 +19,9 @@ class App extends Component {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button href="/go/download" block="true">
-                            Download file
-                        </Button>
+                        <form enctype="multipart/form-data" action="/go/download" method="post">
+                            <Button id="image-file" type="file">Download file</Button>
+                        </form>
                     </Card.Footer>
                 </Card>
             </Container>

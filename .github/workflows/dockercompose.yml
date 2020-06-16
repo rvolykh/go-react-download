@@ -22,8 +22,8 @@ jobs:
             docker-compose up -d --build
       - name: Run tests
         run: |
-            curl -o /dev/null --fail http://localhost/go/download
-            curl -o /dev/null --fail http://localhost/
+            curl -o -XPOST /dev/null --fail http://localhost/go/download
+            curl -o -XGET /dev/null --fail http://localhost/
       - name: Down
         if: always()
         run: |
